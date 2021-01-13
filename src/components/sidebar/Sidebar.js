@@ -27,7 +27,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                 </div>
                 <div className="sidebar__link">
                     <i className="fa fa-wrench"></i>
-                    <a href="#">Employee Management</a>
+                    <a href="#">Student Management</a>
                 </div>
                 <div className="sidebar__link">
                     <i className="fa fa-archive"></i>
