@@ -1,6 +1,7 @@
 import './Main.css';
 import hello from '../../assets/hello.svg';
 import Chart from '../charts/Chart'
+import PopChart from '../PopChart';
 
 const Main = () => {
     return(
@@ -57,7 +58,7 @@ const Main = () => {
                                 <h1>Daily Reports</h1>
                                 <p>Delhi Public School, Bangalore</p>
                             </div>
-                            <i className="fa fa-usd"></i>
+                            <i className="fas fa-chart-line"></i>
                         </div>
                         <Chart />
                     </div>
@@ -93,6 +94,10 @@ const Main = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div>
+                    <PopChart />
                 </div>
             </div>
         </main>
