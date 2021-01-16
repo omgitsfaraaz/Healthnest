@@ -2,6 +2,23 @@ import './Main.css';
 import hello from '../../assets/hello.svg';
 import Chart from '../charts/Chart'
 import PopChart from '../PopChart';
+import Dropdown from '../dropdown/Dropdown';
+import BoysHeight from '../BoysHeight';
+
+const items = [
+    {
+      id: 1,
+      value: '2018',
+    },
+    {
+      id: 2,
+      value: '2019',
+    },
+    {
+      id: 3,
+      value: '2020',
+    },
+  ]
 
 const Main = () => {
     return(
@@ -98,6 +115,17 @@ const Main = () => {
 
                 <div>
                     <PopChart />
+                    <Dropdown title="Select year" items={items} multiSelect />
+                </div>
+                <div className="heights">
+                    <div>
+                        <h1>Boys height</h1>
+                        <BoysHeight />
+                    </div>
+                    <div>
+                        <h1>Girls height</h1>
+                        <BoysHeight />
+                    </div>
                 </div>
             </div>
         </main>
