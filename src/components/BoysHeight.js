@@ -1,132 +1,109 @@
 import React, { Component } from 'react';
-import Chart from 'react-apexcharts';
+import ReactApexChart from 'react-apexcharts';
+
+// function generateDayWiseTimeSeries(baseval, count, yrange) {
+//     var i = 0;
+//     var series = [];
+//     while (i < count) {
+//         var x = baseval;
+//         var y =
+//           Math.floor(Math.random() * (yrange.max - yrange.min + 1)) +
+//           yrange.min;
+
+//         series.push([x, y]);
+//         baseval += 86400000;
+//         i++;
+//     }
+//     return series;
+// }
 
 class BoysHeight extends Component {
     constructor(props) {
         super(props);
         this.state = {
           
-            series: [{
-              name: 'Points',
-              type: 'scatter',
-            
-              //2.14, 2.15, 3.61, 4.93, 2.4, 2.7, 4.2, 5.4, 6.1, 8.3
-              data: [{
-                x: 1,
-                y: 2.14
-              }, {
-                x: 1.2,
-                y: 2.19
-              }, {
-                x: 1.8,
-                y: 2.43
-              }, {
-                x: 2.3,
-                y: 3.8
-              }, {
-                x: 2.6,
-                y: 4.14
-              }, {
-                x: 2.9,
-                y: 5.4
-              }, {
-                x: 3.2,
-                y: 5.8
-              }, {
-                x: 3.8,
-                y: 6.04
-              }, {
-                x: 4.55,
-                y: 6.77
-              }, {
-                x: 4.9,
-                y: 8.1
-              }, {
-                x: 5.1,
-                y: 9.4
-              }, {
-                x: 7.1,
-                y: 7.14
-              },{
-                x: 9.18,
-                y: 8.4
-              }]
-            }, {
-              name: 'Line',
-              type: 'line',
-              data: [{
-                x: 1,
-                y: 8
-              }, {
-                x: 2,
-                y: 8
-              }, {
-                x: 3,
-                y: 8
-              }, {
-                x: 4,
-                y: 8
-              }, {
-                x: 5,
-                y: 8
-              }, {
-                x: 6,
-                y: 8
-              }, {
-                x: 7,
-                y: 8
-              }, {
-                x: 8,
-                y: 8
-              }, {
-                x: 9,
-                y: 8
-              }, {
-                x: 10,
-                y: 8
-              }]
-            }],
+            series: [
+              {
+                name: 'P10 and above : Normal Growth',
+                data: [30, 44, 55, 60, 62, 65, 67, 68, 69, 70, 74, 75, 84, 88, 90, 93, 95],
+                type: 'area',
+              },
+              {
+                name: 'P03 to P10 : Below Normal Growth',
+                data: [84, 169],
+                type: 'area'
+              },
+              {
+                name: 'Vaishali',
+                type: 'line',
+                data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33, 55, 69, 45, 61, 43, 54]
+              },
+              {
+                name: 'Class 2',
+                type: 'scatter',
+                data: [53, 10, 55, 30, 60, 82, 67, 1, 40, 89, 84, 11, 20, 41, 93, 20, 55]
+              },
+            ],
             options: {
               chart: {
-                height: 350,
-                type: 'line',
+                type: 'area',
+                height: 380,
+                stacked: false,
+                // events: {
+                //   selection: function (chart, e) {
+                //     console.log(new Date(e.xaxis.min))
+                //   }
+                // },
+              },
+              colors: ['#008FFB', '#00E396', '#8e44ad', '#e84118'],
+              dataLabels: {
+                enabled: false
+              },
+              stroke: {
+                curve: 'smooth'
               },
               fill: {
-                type:'solid',
-              },
-              markers: {
-                size: [6, 0]
-              },
-              tooltip: {
-                shared: false,
-                intersect: true,
+                type: 'gradient',
+                gradient: {
+                  opacityFrom: 0.6,
+                  opacityTo: 0.8,
+                }
               },
               legend: {
-                show: false
+                position: 'top',
+                horizontalAlign: 'left'
               },
               xaxis: {
-                type: 'numeric',
-                min: 0,
-                max: 12,
-                tickAmount: 12
-              }
+                  categories: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+              },
+              yaxis: [
+                  {
+                      title: {
+                          text: 'Height in cm',
+                      },
+                  },
+                  {
+                      opposite: true,
+                      title: {
+                          text: 'Percentile',
+                      }
+                  }
+              ]
             },
           
           
-          };
+        };
     }
 
     render() {
         return (
-            <React.Fragment>
-                <Chart
-                    options={this.state.options}
-                    series={this.state.series}
-                    type="line"
-                    height={350}
-                    width={400} 
-                />
-            </React.Fragment>
+            <ReactApexChart
+                options={this.state.options}
+                series={this.state.series}
+                height={380}
+                type="scatter"
+                // width={400}
+            />
         )
     }
 }

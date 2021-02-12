@@ -186,13 +186,30 @@ main {
     }
 }
 
-.heights {
+.temperature-graph {
     display: flex;
     justify-content: space-around;
 }
 
+.height-graph {
+    display: flex;
+    justify-content: space-around;
+}
+
+.temp-heading {
+    text-align: center;
+}
+
+.height-heading {
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
-    .heights {
+    .temperature-graph {
+        flex-wrap: wrap;
+    }
+
+    .height-graph {
         flex-wrap: wrap;
     }
 }

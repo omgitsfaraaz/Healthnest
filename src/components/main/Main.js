@@ -3,7 +3,15 @@ import hello from '../../assets/hello.svg';
 import Chart from '../charts/Chart'
 import PopChart from '../PopChart';
 import Dropdown from '../dropdown/Dropdown';
+import BoysTemp from '../BoysTemp';
 import BoysHeight from '../BoysHeight';
+import NewScatter from '../NewScatter';
+import PieChart from '../PieChart';
+import Vision from '../Vision';
+import VisionPie from '../VisionPie';
+import Hearing from '../Hearing';
+import HearingPie from '../HearingPie';
+import NewHeight from '../NewHeight';
 
 const items = [
     {
@@ -68,7 +76,7 @@ const Main = () => {
 
                 </div>
 
-                <div className="charts">
+                {/* <div className="charts">
                     <div className="charts__left">
                     <div className="charts__right__title">
                             <div>
@@ -111,21 +119,41 @@ const Main = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div>
-                    <PopChart />
+                    {/* <PopChart /> */}
                     <Dropdown title="Select year" items={items} multiSelect />
                 </div>
-                <div className="heights">
+                {/* <div className="">
                     <div>
-                        <h1>Boys height</h1>
+                        <h1 className="height-heading">Boys Height</h1>
                         <BoysHeight />
                     </div>
-                    <div>
-                        <h1>Girls height</h1>
-                        <BoysHeight />
-                    </div>
+                </div> */}
+                <div>
+                    <NewScatter />
+                </div>
+                <div>
+                    <PieChart />
+                </div>
+                {/* <div>
+                    <Eyesight />
+                </div> */}
+                <div>
+                    <Vision />
+                </div>
+                <div>
+                    <VisionPie />
+                </div>
+                <div>
+                    <Hearing />
+                </div>
+                <div>
+                    <HearingPie />
+                </div>
+                <div>
+                    <NewHeight />
                 </div>
             </div>
         </main>
